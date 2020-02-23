@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JasonMorsley.Dev.WalkingSkeleton.API</name>
+    </assembly>
+    <members>
+        <member name="M:JasonMorsley.Dev.WalkingSkeleton.API.Controllers.v1.ApiController.Get">
+            <summary>
+            Get a greeting
+            </summary>
+            <returns>The requested greeting</returns>
+            <response code="200">Success - OK - Returns a greeting</response>
+            <response code="400">Error - Bad Request - It was not possible to bind the request JSON</response>
+        </member>
+    </members>
+</doc>
