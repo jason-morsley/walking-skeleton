@@ -26,6 +26,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2B062F59
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CI", "CI", "{CCFB600D-345C-410A-8D54-738E903F722D}"
 	ProjectSection(SolutionItems) = preProject
+		Pipelines\CI\credentials.yaml = Pipelines\CI\credentials.yaml
+		Pipelines\CI\Dockerfile = Pipelines\CI\Dockerfile
 		Pipelines\CI\pipeline.yaml = Pipelines\CI\pipeline.yaml
 		Pipelines\CI\ReadMe.md = Pipelines\CI\ReadMe.md
 	EndProjectSection
