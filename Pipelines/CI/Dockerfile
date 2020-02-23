@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY master/Published/ .
 
-EXPOSE 5001/tcp
-ENV ASPNETCORE_URLS http://*:5001
+EXPOSE 7777/tcp
+ENV ASPNETCORE_URLS http://*:7777
 
-ENTRYPOINT ["dotnet", "Morsley.UK.Walking.Skeleton.API.dll", "--no-launch-profile"]
+ENTRYPOINT ["dotnet", "JasonMorsley.Dev.WalkingSkeleton.API.dll", "--no-launch-profile"]
