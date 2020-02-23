@@ -354,3 +354,5 @@ Published
 *.trx
 
 .idea
+
+credentials.yaml

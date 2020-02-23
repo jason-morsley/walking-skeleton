@@ -1,0 +1,22 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: johnmorsley/ubuntu-with-docker
+#    tag: 18.04
+
+inputs:
+- name: tested
+
+outputs:
+- name: tested
+
+run:
+  path: sh
+  args:
+  - -exec
+  - |
+    chmod u+x tested/Pipelines/CI/Scripts/containerise.sh
+    sh tested/Pipelines/CI/Scripts/containerise.sh

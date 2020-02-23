@@ -1,0 +1,121 @@
+---
+
+# fly --target lh login --concourse-url http://localhost:8080
+# fly --target lh set-pipeline --config pipeline.yaml --pipeline Walking-Skeleton
+
+resources:
+
+  #
+  # GITHUB
+  #
+
+  - name: master
+    type: git
+    icon: github-circle
+    # check_every: 5 # Minutes
+    source:
+      uri: https://github.com/jason-morsley/walking-skeleton
+      branch: master
+      ignore_paths:
+      - .git/**
+      - .git/*
+      - .git/
+      - .git
+      - .gitignore
+
+  #
+  # DOCKER
+  # 
+
+  - name: docker
+    type: docker-image
+    icon: docker
+    source: 
+      repository: jasonmorsley/walking-skeleton-api
+      username: ((docker-username))
+      password: ((docker-password))
+
+  #
+  # DETERMINE THE SEMANTIC VERSION
+  #
+
+  #- name: semantic-version
+
+  #
+  # GET THE KUBERNETES CLUSTER 
+  #
+
+  #- name: kubernetes-cluster
+
+jobs:
+
+  - name: ci
+
+    plan:
+
+      - get: master
+        trigger: true
+
+      #
+      # TREE SOURCE CODE - MASTER
+      #
+
+      - task: tree-source
+        file: master/Pipelines/CI/Tasks/tree.yaml
+        input_mapping: { folder: master }
+
+      #
+      #  BUILD THE SOURCE CODE
+      #
+
+      - task: build
+        file: master/Pipelines/CI/Tasks/build.yaml
+        input_mapping: { code: master }
+        output_mapping: { code: master }
+
+      #
+      # TREE BUILT
+      #
+
+      - task: tree-built
+        file: master/Pipelines/CI/Tasks/tree.yaml
+        input_mapping: { folder: master }
+
+      #
+      # RUN UNIT TESTS
+      #
+
+      - task: unit-tests
+        file: master/Pipelines/CI/Tasks/unit-tests.yaml
+        input_mapping: { built: master }
+        output_mapping: { built: master }
+
+      #
+      # TREE UNIT TEST RESULTS
+      #
+
+      - task: tree-unit-test-results
+        file: master/Pipelines/CI/Tasks/tree.yaml
+        input_mapping: { folder: master }
+
+      #
+      #  CONTAINERISE
+      #
+
+      - put: docker
+        params:
+          build: .
+          dockerfile: master/Pipelines/CI/Dockerfile 
+
+      #- task: containerise
+      #  file: master/Pipelines/CI/Tasks/containerise.yaml
+      #  input_mapping: { tested: master }
+      #  output_mapping: { tested: master }
+
+      #
+      # TREE CONTAINERISE
+      #
+
+      #- task: tree-containerise
+      #  file: master/Pipelines/CI/Tasks/tree.yaml
+      #  input_mapping: { folder: master }

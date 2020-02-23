@@ -83,7 +83,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit", "Unit", "{7F065DDC-7
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JasonMorsley.Dev.WalkingSkeleton.API", "Source\Presentation\JasonMorsley.Dev.WalkingSkeleton.API\JasonMorsley.Dev.WalkingSkeleton.API.csproj", "{A2E28FD8-733B-41AD-B82C-A5386BF2B2A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JasonMorsley.Dev.WalkingSkeleton.API.Tests.Unit", "Tests\Unit\JasonMorsley.Dev.WalkingSkeleton.API.Tests.Unit\JasonMorsley.Dev.WalkingSkeleton.API.Tests.Unit.csproj", "{AD23E0F0-86DC-4C49-8A07-ED5D32DF7150}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JasonMorsley.Dev.WalkingSkeleton.API.Tests.Unit", "Tests\Unit\JasonMorsley.Dev.WalkingSkeleton.API.Tests.Unit\JasonMorsley.Dev.WalkingSkeleton.API.Tests.Unit.csproj", "{AD23E0F0-86DC-4C49-8A07-ED5D32DF7150}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{B5820947-3B91-4253-914E-784149F0E20E}"
+	ProjectSection(SolutionItems) = preProject
+		Pipelines\CI\Scripts\build.sh = Pipelines\CI\Scripts\build.sh
+		Pipelines\CI\Scripts\containerise.sh = Pipelines\CI\Scripts\containerise.sh
+		Pipelines\CI\Scripts\publish.sh = Pipelines\CI\Scripts\publish.sh
+		Pipelines\CI\Scripts\unit-tests.sh = Pipelines\CI\Scripts\unit-tests.sh
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tasks", "Tasks", "{5C32445C-FF2A-4111-8A67-7FD7C49F2DC2}"
+	ProjectSection(SolutionItems) = preProject
+		Pipelines\CI\Tasks\build.yaml = Pipelines\CI\Tasks\build.yaml
+		Pipelines\CI\Tasks\containerise.yaml = Pipelines\CI\Tasks\containerise.yaml
+		Pipelines\CI\Tasks\publish.yaml = Pipelines\CI\Tasks\publish.yaml
+		Pipelines\CI\Tasks\tree.yaml = Pipelines\CI\Tasks\tree.yaml
+		Pipelines\CI\Tasks\unit-tests.yaml = Pipelines\CI\Tasks\unit-tests.yaml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -117,6 +134,8 @@ Global
 		{7F065DDC-70A1-4244-B88A-D15155FB0BE3} = {2B062F59-5222-4A5D-BDCD-27BA81905F4C}
 		{A2E28FD8-733B-41AD-B82C-A5386BF2B2A0} = {FA1BC981-A970-4672-B79F-F6413E1DD5A9}
 		{AD23E0F0-86DC-4C49-8A07-ED5D32DF7150} = {7F065DDC-70A1-4244-B88A-D15155FB0BE3}
+		{B5820947-3B91-4253-914E-784149F0E20E} = {CCFB600D-345C-410A-8D54-738E903F722D}
+		{5C32445C-FF2A-4111-8A67-7FD7C49F2DC2} = {CCFB600D-345C-410A-8D54-738E903F722D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7FACC54E-B592-4C48-920B-C16422568F66}
