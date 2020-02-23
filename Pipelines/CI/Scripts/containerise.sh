@@ -18,7 +18,7 @@ cd tested/Pipelines/CI
 
 #header 'CREATE DOCKER IMAGE'
 
-docker build --tag morsley-uk-walking-skeleton-api .
+docker build --tag jasonmorsley-dev-walkingskeleton-api .
 
 #header 'CREATE DOCKER IMAGE'
 

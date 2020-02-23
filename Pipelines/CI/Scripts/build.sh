@@ -40,7 +40,7 @@ header 'BUILD COMPLETED'
 
 header 'PUBLISH STARTED'
 
-cd Source/Presentation/Morsley.UK.Walking.Skeleton.API
+cd Source/Presentation/JasonMorsley.Dev.WalkingSkeleton.API
 
 dotnet publish --configuration Release \
                --nologo \

@@ -7,7 +7,7 @@ ROOT="$PARENT_PATH"/../../..
 SCRIPTS="$ROOT"/Pipelines/Scripts
 source $SCRIPTS/header.sh
 
-cd tested/Source/Presentation/Morsley.UK.Walking.Skeleton.API
+cd tested/Source/Presentation/JasonMorsley.Dev.WalkingSkeleton.API
 
 ###############################################################################
 

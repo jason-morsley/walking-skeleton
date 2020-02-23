@@ -38,6 +38,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CD", "CD", "{53F0A238-07A8-
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{492FF499-B171-4ECF-837A-FD23A6057A1D}"
 	ProjectSection(SolutionItems) = preProject
+		..\..\Users\Jason\Downloads\header.sh = ..\..\Users\Jason\Downloads\header.sh
 		Pipelines\Scripts\ReadMe.md = Pipelines\Scripts\ReadMe.md
 	EndProjectSection
 EndProject
