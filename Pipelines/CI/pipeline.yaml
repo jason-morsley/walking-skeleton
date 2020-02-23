@@ -77,35 +77,35 @@ jobs:
       # TREE BUILT
       #
 
-#      - task: tree-built
-#        file: master/Pipelines/CI/Tasks/tree.yaml
-#        input_mapping: { folder: master }
+      - task: tree-built
+        file: master/Pipelines/CI/Tasks/tree.yaml
+        input_mapping: { folder: master }
 
       #
       # RUN UNIT TESTS
       #
 
-#      - task: unit-tests
-#        file: master/Pipelines/CI/Tasks/unit-tests.yaml
-#        input_mapping: { built: master }
-#        output_mapping: { built: master }
+      - task: unit-tests
+        file: master/Pipelines/CI/Tasks/unit-tests.yaml
+        input_mapping: { built: master }
+        output_mapping: { built: master }
 
       #
       # TREE UNIT TEST RESULTS
       #
 
-#      - task: tree-unit-test-results
-#        file: master/Pipelines/CI/Tasks/tree.yaml
-#        input_mapping: { folder: master }
+      - task: tree-unit-test-results
+        file: master/Pipelines/CI/Tasks/tree.yaml
+        input_mapping: { folder: master }
 
       #
       #  CONTAINERISE
       #
 
-#      - put: docker
-#        params:
-#          build: .
-#         dockerfile: master/Pipelines/CI/Dockerfile 
+      - put: docker
+        params:
+         build: .
+         dockerfile: master/Pipelines/CI/Dockerfile 
 
       #- task: containerise
       #  file: master/Pipelines/CI/Tasks/containerise.yaml
