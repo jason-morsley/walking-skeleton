@@ -83,6 +83,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit", "Unit", "{7F065DDC-7
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JasonMorsley.Dev.WalkingSkeleton.API", "Source\Presentation\JasonMorsley.Dev.WalkingSkeleton.API\JasonMorsley.Dev.WalkingSkeleton.API.csproj", "{A2E28FD8-733B-41AD-B82C-A5386BF2B2A0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JasonMorsley.Dev.WalkingSkeleton.API.Tests.Unit", "Tests\Unit\JasonMorsley.Dev.WalkingSkeleton.API.Tests.Unit\JasonMorsley.Dev.WalkingSkeleton.API.Tests.Unit.csproj", "{AD23E0F0-86DC-4C49-8A07-ED5D32DF7150}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{A2E28FD8-733B-41AD-B82C-A5386BF2B2A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2E28FD8-733B-41AD-B82C-A5386BF2B2A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2E28FD8-733B-41AD-B82C-A5386BF2B2A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD23E0F0-86DC-4C49-8A07-ED5D32DF7150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD23E0F0-86DC-4C49-8A07-ED5D32DF7150}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD23E0F0-86DC-4C49-8A07-ED5D32DF7150}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD23E0F0-86DC-4C49-8A07-ED5D32DF7150}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -110,6 +116,7 @@ Global
 		{39B42A53-9EDF-41E2-BD45-2C57D1999ACB} = {2B062F59-5222-4A5D-BDCD-27BA81905F4C}
 		{7F065DDC-70A1-4244-B88A-D15155FB0BE3} = {2B062F59-5222-4A5D-BDCD-27BA81905F4C}
 		{A2E28FD8-733B-41AD-B82C-A5386BF2B2A0} = {FA1BC981-A970-4672-B79F-F6413E1DD5A9}
+		{AD23E0F0-86DC-4C49-8A07-ED5D32DF7150} = {7F065DDC-70A1-4244-B88A-D15155FB0BE3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7FACC54E-B592-4C48-920B-C16422568F66}
