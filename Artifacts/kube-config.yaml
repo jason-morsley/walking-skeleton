@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Config
+clusters:
+- name: "walking-skeleton"
+  cluster:
+    server: "https://rancher.jasonmorsley.io/k8s/clusters/c-csm9f"
+
+users:
+- name: "walking-skeleton"
+  user:
+    token: "kubeconfig-user-fttm6:trbzcj2sjks9bdvjnjzxbm9pqlj7rzqz7fm52q26wgxpgd7p75m6tv"
+
+contexts:
+- name: "walking-skeleton"
+  context:
+    user: "walking-skeleton"
+    cluster: "walking-skeleton"
+
+current-context: "walking-skeleton"
