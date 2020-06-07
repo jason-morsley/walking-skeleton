@@ -14,7 +14,7 @@ resources:
     icon: git
     # check_every: 5 # Minutes
     source:
-      uri: https://github.com/morsley-uk/walking-skeleton
+      uri: https://github.com/jason-morsley/walking-skeleton
       branch: master
       ignore_paths:
       - .git/**
