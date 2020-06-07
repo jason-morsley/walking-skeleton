@@ -1,0 +1,151 @@
+---
+
+# fly --target lh login --concourse-url http://localhost:8080
+# fly --target lh set-pipeline --config pipeline.yaml --pipeline Walking-Skeleton
+
+resources:
+
+  #
+  # GITHUB
+  #
+
+  - name: master    
+    type: git
+    icon: git
+    # check_every: 5 # Minutes
+    source:
+      uri: https://github.com/morsley-uk/walking-skeleton
+      branch: master
+      ignore_paths:
+      - .git/**
+      - .git/*
+      - .git/
+      - .git
+      - .gitignore
+
+  #
+  # DOCKER
+  # 
+
+  - name: docker
+    type: docker-image
+    icon: docker
+    source: 
+      repository: jasonmorsleyio/walking-skeleton-api
+      username: ((docker-username))
+      password: ((docker-password))
+
+  #
+  # DETERMINE THE SEMANTIC VERSION
+  #
+
+  #- name: semantic-version
+
+  #
+  # GET THE KUBERNETES CLUSTER KUBECONFIG
+  #
+
+  #- name: kubeconfig
+  #  type: s3
+  #  icon: aws
+  #  source:
+  #    bucket: morsley-io-test #concourse-jasonmorsley-io
+  #    region_name: eu-west-2
+  #    version: 1
+  #    regexp: test.txt
+  #    endpoint: https://morsley-io-test.s3.eu-west-2.amazonaws.com/
+  #    #access_key_id: ((aws-access-key))
+  #    #secret_access_key_id: ((aws-secret-access-key))
+
+jobs:
+
+  - name: CI
+    serial: true
+
+    plan:
+
+      - get: master
+        trigger: true
+
+      #
+      # TREE SOURCE CODE - MASTER
+      #
+
+      - task: tree-source
+        file: master/Pipelines/Tasks/tree.yaml
+        input_mapping: { folder: master }
+
+      #
+      #  BUILD THE SOURCE CODE
+      #
+
+      - task: build
+        file: master/Pipelines/Tasks/build.yaml
+        input_mapping: { code: master }
+        output_mapping: { code: master }
+
+      #
+      # TREE BUILT
+      #
+
+      - task: tree-built
+        file: master/Pipelines/Tasks/tree.yaml
+        input_mapping: { folder: master }
+
+      #
+      # RUN UNIT TESTS
+      #
+
+      - task: unit-tests
+        file: master/Pipelines/Tasks/unit-tests.yaml
+        input_mapping: { built: master }
+        output_mapping: { built: master }
+
+      #
+      # TREE UNIT TEST RESULTS
+      #
+
+      - task: tree-unit-test-results
+        file: master/Pipelines/Tasks/tree.yaml
+        input_mapping: { folder: master }
+
+      #
+      #  CONTAINERISE
+      #
+
+      - put: docker
+        params:
+          build: .
+          dockerfile: master/Pipelines/Dockerfile 
+
+#      #- task: containerise
+#      #  file: master/Pipelines/Tasks/containerise.yaml
+#      #  input_mapping: { tested: master }
+#      #  output_mapping: { tested: master }
+#
+#      #
+#      # TREE CONTAINERISE
+#      #
+#
+#      #- task: tree-containerise
+#      #  file: master/Pipelines/Tasks/tree.yaml
+#      #  input_mapping: { folder: master }
+        
+  - name: CD
+    serial: true
+      
+    plan:
+
+      - get: master
+        trigger: true
+        passed: [CI]
+        
+      #- get: kubeconfig
+        
+      - task: tree-source 
+        file: master/Pipelines/Tasks/tree.yaml
+        input_mapping: { folder: master }
+
+      - task: deploy
+        file: master/Pipelines/Tasks/deploy.yaml
+        input_mapping: { deploy: master }

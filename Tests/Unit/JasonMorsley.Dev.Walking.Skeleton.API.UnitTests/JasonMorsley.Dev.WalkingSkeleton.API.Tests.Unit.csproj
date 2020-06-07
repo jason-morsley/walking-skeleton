@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <NullableReferenceTypes>true</NullableReferenceTypes>
+    <IsPackable>false</IsPackable>
+    <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+    <RunAnalyzersDuringLiveAnalysis>false</RunAnalyzersDuringLiveAnalysis>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoFixture" Version="4.11.0" />
+    <PackageReference Include="FluentAssertions" Version="5.10.2" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+    <PackageReference Include="NSubstitute" Version="4.2.1" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; analyze; contentfiles; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <FluentValidationExcludedCultures Include="be;cs;cs-CZ;da;de;es;fa;fi;fr;ja;it;ko;mk;nl;pl;pt;pt-BR;ru;sv;tr;uk;zh-CN;zh-CHS;zh-CHT;zh-Hans;zh-Hant;">
+      <InProject>false</InProject>
+    </FluentValidationExcludedCultures>
+  </ItemGroup>
+    
+    <ItemGroup>
+    <ProjectReference Include="..\..\..\Source\Presentation\JasonMorsley.Dev.Walking.Skeleton.API\JasonMorsley.Dev.Walking.Skeleton.API.csproj" />
+  </ItemGroup>
+
+  <Target Name="RemoveTranslationsAfterBuild" AfterTargets="AfterBuild">
+    <RemoveDir Directories="@(FluentValidationExcludedCultures->'$(OutputPath)%(Filename)')" />
+  </Target>
+
+</Project>

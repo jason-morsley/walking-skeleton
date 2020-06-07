@@ -1,0 +1,18 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: jasonmorsley/alpine-with-utilities
+    #tag: 1.0
+
+inputs:
+- name: folder
+
+run:
+  path: sh
+  args:
+  - -exec
+  - |
+    tree

@@ -1,0 +1,108 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Documentation", "_Documentation", "{A44DB59D-5BB2-4D87-91E0-852861FFC791}"
+	ProjectSection(SolutionItems) = preProject
+		ReadMe.md = ReadMe.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{36F6004E-F729-4218-9B43-54036409A040}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pipelines", "Pipelines", "{9AC30BCF-7DDF-42A2-8238-D2473C85CC2F}"
+	ProjectSection(SolutionItems) = preProject
+		Pipelines\ReadMe.md = Pipelines\ReadMe.md
+		Pipelines\Concourse.md = Pipelines\Concourse.md
+		Pipelines\credentials.yaml = Pipelines\credentials.yaml
+		Pipelines\Dockerfile = Pipelines\Dockerfile
+		Pipelines\pipeline.yaml = Pipelines\pipeline.yaml
+		Pipelines\Concourse-Local.md = Pipelines\Concourse-Local.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4B26DDC4-CED6-4887-9A81-96DD3F462EDC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit", "Unit", "{77B088F8-90F6-45FD-844C-046A74D9B47C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{DB13FAFE-28AE-491D-B150-D0F50991F625}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "System", "System", "{3E6BB778-C6B7-4EC6-81BB-2709C7D68EC4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Shared", "_Shared", "{1AB93284-C354-4FEC-A68F-08A09FCEC024}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Shared", "_Shared", "{73D00F03-7B48-410E-9224-47BAD7C0D441}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{560EC2D5-A72E-464A-8FE0-EF4840875D45}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{84E57509-15D2-4656-88FE-C51E18886DA7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{425C780E-1E00-462E-800C-AF0FC82F7383}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JasonMorsley.Dev.Walking.Skeleton.API", "Source\Presentation\JasonMorsley.Dev.Walking.Skeleton.API\JasonMorsley.Dev.Walking.Skeleton.API.csproj", "{02105B62-6A77-473D-B429-19DEAEEB2C2B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JasonMorsley.Dev.WalkingSkeleton.API.Tests.Unit", "Tests\Unit\JasonMorsley.Dev.Walking.Skeleton.API.UnitTests\JasonMorsley.Dev.WalkingSkeleton.API.Tests.Unit.csproj", "{C5A1F29F-10EB-4384-9889-59D985267315}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{5784B01A-D524-4C67-9646-448D69CE6C69}"
+ProjectSection(SolutionItems) = preProject
+	Pipelines\Scripts\build.sh = Pipelines\Scripts\build.sh
+	Pipelines\Scripts\containerise.sh = Pipelines\Scripts\containerise.sh
+	Pipelines\Scripts\deploy.sh = Pipelines\Scripts\deploy.sh
+	Pipelines\Scripts\header.sh = Pipelines\Scripts\header.sh
+	Pipelines\Scripts\publish.sh = Pipelines\Scripts\publish.sh
+	Pipelines\Scripts\unit-tests.sh = Pipelines\Scripts\unit-tests.sh
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "k8s", "k8s", "{A4D8E1B9-804F-4DF4-922D-BC00263B0E58}"
+ProjectSection(SolutionItems) = preProject
+	Pipelines\k8s\deployment.yaml = Pipelines\k8s\deployment.yaml
+	Pipelines\k8s\ingress.yaml = Pipelines\k8s\ingress.yaml
+	Pipelines\k8s\service.yaml = Pipelines\k8s\service.yaml
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tasks", "Tasks", "{162CF6C5-9842-4614-86DB-F51232329FBC}"
+ProjectSection(SolutionItems) = preProject
+	Pipelines\Tasks\build.yaml = Pipelines\Tasks\build.yaml
+	Pipelines\Tasks\containerise.yaml = Pipelines\Tasks\containerise.yaml
+	Pipelines\Tasks\deploy.yaml = Pipelines\Tasks\deploy.yaml
+	Pipelines\Tasks\publish.yaml = Pipelines\Tasks\publish.yaml
+	Pipelines\Tasks\tree.yaml = Pipelines\Tasks\tree.yaml
+	Pipelines\Tasks\unit-tests.yaml = Pipelines\Tasks\unit-tests.yaml
+EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02105B62-6A77-473D-B429-19DEAEEB2C2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02105B62-6A77-473D-B429-19DEAEEB2C2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02105B62-6A77-473D-B429-19DEAEEB2C2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02105B62-6A77-473D-B429-19DEAEEB2C2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5A1F29F-10EB-4384-9889-59D985267315}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5A1F29F-10EB-4384-9889-59D985267315}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5A1F29F-10EB-4384-9889-59D985267315}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5A1F29F-10EB-4384-9889-59D985267315}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{77B088F8-90F6-45FD-844C-046A74D9B47C} = {4B26DDC4-CED6-4887-9A81-96DD3F462EDC}
+		{DB13FAFE-28AE-491D-B150-D0F50991F625} = {4B26DDC4-CED6-4887-9A81-96DD3F462EDC}
+		{3E6BB778-C6B7-4EC6-81BB-2709C7D68EC4} = {4B26DDC4-CED6-4887-9A81-96DD3F462EDC}
+		{1AB93284-C354-4FEC-A68F-08A09FCEC024} = {4B26DDC4-CED6-4887-9A81-96DD3F462EDC}
+		{73D00F03-7B48-410E-9224-47BAD7C0D441} = {36F6004E-F729-4218-9B43-54036409A040}
+		{560EC2D5-A72E-464A-8FE0-EF4840875D45} = {36F6004E-F729-4218-9B43-54036409A040}
+		{84E57509-15D2-4656-88FE-C51E18886DA7} = {36F6004E-F729-4218-9B43-54036409A040}
+		{425C780E-1E00-462E-800C-AF0FC82F7383} = {36F6004E-F729-4218-9B43-54036409A040}
+		{02105B62-6A77-473D-B429-19DEAEEB2C2B} = {425C780E-1E00-462E-800C-AF0FC82F7383}
+		{C5A1F29F-10EB-4384-9889-59D985267315} = {77B088F8-90F6-45FD-844C-046A74D9B47C}
+		{5784B01A-D524-4C67-9646-448D69CE6C69} = {9AC30BCF-7DDF-42A2-8238-D2473C85CC2F}
+		{A4D8E1B9-804F-4DF4-922D-BC00263B0E58} = {9AC30BCF-7DDF-42A2-8238-D2473C85CC2F}
+		{162CF6C5-9842-4614-86DB-F51232329FBC} = {9AC30BCF-7DDF-42A2-8238-D2473C85CC2F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EAB81E26-DEA4-46CC-82A6-E96750B86FB6}
+	EndGlobalSection
+EndGlobal

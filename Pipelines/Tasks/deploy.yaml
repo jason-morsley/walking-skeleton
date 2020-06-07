@@ -1,0 +1,22 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: jasonmorsley/alpine-with-kubernetes
+#    tag: 18.04
+
+inputs:
+  - name: deploy
+
+#outputs:
+#  - name: tested
+
+run:
+  path: sh
+  args:
+    - -exec
+    - |
+      chmod u+x deploy/Pipelines/Scripts/deploy.sh
+      sh deploy/Pipelines/Scripts/deploy.sh
