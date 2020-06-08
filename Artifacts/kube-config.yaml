@@ -3,12 +3,12 @@ kind: Config
 clusters:
 - name: "walking-skeleton"
   cluster:
-    server: "https://rancher.jasonmorsley.io/k8s/clusters/c-csm9f"
+    server: "https://rancher.jasonmorsley.io/k8s/clusters/c-ljsgv"
 
 users:
 - name: "walking-skeleton"
   user:
-    token: "kubeconfig-user-fttm6:trbzcj2sjks9bdvjnjzxbm9pqlj7rzqz7fm52q26wgxpgd7p75m6tv"
+    token: "kubeconfig-user-vz4hx:bqsv4xs2v949txp7h2x5pcqdgwfmskmtrc5gpktqglt2qr9wxtkfdr"
 
 contexts:
 - name: "walking-skeleton"
